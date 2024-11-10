@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Kidneys</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+    .main {
+        margin: 60px;
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 300;
+
+        /* color: red; */
+        font-style: normal;
+        font-size: 20px;
+        /* margin-bottom: 50px; */
+    }
+
+    #k1 {
+        transition: transform 0.2s ease-in-out;
+        animation-name: wipe-in-right;
+        animation-duration: 2.5s;
+        animation-timing-function: cubic-bezier(.25, 1, .30, 1);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes wipe-in-right {
+        from {
+            clip-path: inset(0 100% 0 0);
+        }
+
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    #k1:hover {
+        transform: scale(1.1);
+    }
+
+    #k2 {
+        position: absolute;
+        top: 50px;
+        left: 37px;
+        /* transition: transform 0.2s ease-in-out; */
+        height: 500px;
+        transition: transform 0.2s ease-in-out;
+        animation-name: wipe-in-right;
+        animation-duration: 10.5s;
+        animation-timing-function: cubic-bezier(.25, 1, .30, 1);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+
+
+    }
+
+    #k2:hover {
+        transform: scale(1.1);
+
+    }
+
+    #k3 {
+        position: absolute;
+        top: 100px;
+        left: 87px;
+        transition: transform 0.2s ease-in-out;
+        animation-name: wipe-in-right;
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(.25, 1, .30, 1);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+
+    }
+
+    #k3:hover {
+        transform: scale(1.1);
+    }
+
+    #k4 {
+        position: absolute;
+        top: 70px;
+        left: 200px;
+        animation-name: wipe-in-right;
+        animation-duration: 10.5s;
+        animation-timing-function: cubic-bezier(.25, 1, .30, 1);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+
+    #k6 {
+        position: absolute;
+        top: 250px;
+        left: 200px;
+        transition: transform 0.2s ease-in-out;
+        animation-name: wipe-in-right;
+        animation-duration: 10.5s;
+        animation-timing-function: cubic-bezier(.25, 1, .30, 1);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+
+    }
+
+    #k6:hover {
+        transform: scale(1.1);
+    }
+
+    #k5 {
+        position: absolute;
+        top: 290px;
+        left: 290px;
+        transition: transform 0.2s ease-in-out;
+        animation-name: wipe-in-top;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+
+    #k5:hover {
+        transform: scale(1.1);
+    }
+
+    #k4 {
+        transition: transform 0.2s ease-in-out;
+        animation-name: wipe-in-top;
+        animation-duration: 3.5s;
+        animation-timing-function: cubic-bezier(.25, 1, .30, 1);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+
+    }
+
+    @keyframes wipe-in-bottom {
+        from {
+            clip-path: inset(100% 0 0 0);
+        }
+
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    #k4:hover {
+        transform: scale(1.1);
+    }
+
+    #RenalCortex {
+        position: absolute;
+        top: 60px;
+        left: 600px;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 400;
+        color: red;
+        font-style: normal;
+        font-size: 40px;
+        display: block;
+        /* Add this line */
+        animation-name: wipe-in-top;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes wipe-in-top {
+        from {
+            clip-path: inset(100% 0 0 0);
+        }
+
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    .container {
+        background-color: red;
+        padding: 30px;
+        border-radius: 20px;
+        color: white;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 400;
+        /* color: red; */
+        font-style: normal;
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .description {
+        margin-left: 500px;
+    }
+
+    #a2 {
+        position: absolute;
+        top: 500px;
+        left: 400px;
+        transform: scale(1.3);
+    }
+
+    #renalMedulla {
+        position: absolute;
+        top: 450px;
+        left: 600px;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 400;
+        color: rgb(255, 0, 183);
+        font-style: normal;
+        font-size: 40px;
+    }
+
+    #line {
+        margin: 60px;
+    }
+
+    .questionsincode {
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 400;
+        /* color: rgb(255, 0, 183); */
+        font-style: normal;
+        font-size: 40px;
+
+    }
+
+    h1 {
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 400;
+        /* color: rgb(255, 0, 183); */
+        font-style: normal;
+        font-size: 40px;
+
+    }
+
+    #score {
+        font-size: 30px;
+    }
+
+    button {
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        font-weight: 400;
+        background-color: red;
+        padding: 30px;
+        border-radius: 20px;
+        border: none;
+        color: white;
+        font-size: 30px;
+        margin: 40px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        Human Excretory System
+    </div>
+    <div class="main">
+        <div class="images">
+            <img src="Images/Kidneys.png" alt="" height="600px" id="k1" onclick="function1()">
+            <label for="" id="RenalCortex">Renal Cortex</label>
+            <img src="Images/kidney2.png" alt="" id="k2" onclick="function2()">
+            <img src="Images/k3.png" alt="" height="400px" id="k3">
+            <!-- <img src="Images/k4.png" alt="" height="300px" id="k4"> -->
+            <img src="Images/redves1.png" alt="" height="260px" id="k4">
+            <img src="Images/bluevessel1.png" alt="" height="200px" id="k6">
+            <img src="Images/k5.png" alt="" height="400px" id="k5">
+            <img src="Images/a2.png" alt="" height="50px" id="a2">
+            <label for="" id="renalMedulla">Renal Medulla</label>
+            <p style="text-align: center; font-size: 30px; font-weight: 400;">Kidneys</p>
+        </div>
+        <div class="description">
+            <h2>Description</h2>
+            <p id="paragraph">The human excretory system is a complex system that removes waste and excess substances
+                from the body. It
+                consists of several organs and systems that work together to maintain homeostasis and eliminate waste
+                products. The main components of the human excretory system include:</p>
+
+            <div class="container2">
+                Click on the code to view more
+            </div>
+        </div>
+
+    </div>
+
+    <div id="line">
+        <hr>
+    </div>
+    <div id="main2">
+        <!-- Bowmann's capsule -->
+        <img src="Images/Bowmann's Capsule.png" alt="" height="700px">
+    </div>
+    <!-- <script>
+        const k1 = document.getElementById('k1')
+        function function1() {
+            document.getElementById("paragraph").innerHTML = "The outer layer of the kidney is a tough capsule. On the inside the kidney is divided into an outer renal cortex and an inner renal medulla. The hilum extends inside the kidney into a funnel- like space called the renal pelvis. The renal pelvis has projections called calyces (sing: calyx)."
+        }
+
+    </script> -->
+
+    <h1 style="padding: 10px; color: black; font-size: 70px;">Questions - Based on Cell</h1>
+
+    <div class="questionsincode" style="color: black;">
+        <h2 style="font-size: 40px;">Filtration of the blood takes place at</h2>
+        <input type="radio" id="q1-a" name="q1" value="A"> <label for="q1-a" style="font-size: 30px;">A. Urea
+            proteins</label><br>
+        <input type="radio" id="q1-b" name="q1" value="B"> <label for="q1-b" style="font-size: 30px;">B. Uric Acid
+            genetic information</label><br>
+        <input type="radio" id="q1-c" name="q1" value="C"> <label for="q1-c" style="font-size: 30px;">C. Ammonia
+            energy for the cell</label><br>
+        <input type="radio" id="q1-d" name="q1" value="D"> <label for="q1-d" style="font-size: 30px;">D. Carbon dioxide
+            cell growth and division</label>
+    </div>
+
+    <div class="questionsincode" style="color: black;">
+        <h2 style="font-size: 40px;">The PH of the Human urine is approximately</h2>
+        <input type="radio" id="q2-a" name="q2" value="A"> <label for="q2-a" style="font-size: 30px;">A. 6.5
+        </label><br>
+        <input type="radio" id="q2-b" name="q2" value="B"> <label for="q2-b" style="font-size: 30px;">B. 7
+        </label><br>
+        <input type="radio" id="q2-c" name="q2" value="C"> <label for="q2-c" style="font-size: 30px;">C. 6
+        </label><br>
+        <input type="radio" id="q2-d" name="q2" value="D"> <label for="q2-d" style="font-size: 30px;">D. 7.9
+        </label>
+    </div>
+
+    <div class="questionsincode" style="color: black;">
+        <h2 style="font-size: 40px;">What is the primary function of the mitochondria in a cell</h2>
+        <input type="radio" id="q3-a" name="q3" value="A"> <label for="q3-a" style="font-size: 30px;">A. To synthesize
+            proteins</label><br>
+        <input type="radio" id="q3-b" name="q3" value="B"> <label for="q3-b" style="font-size: 30px;">B. To store
+            genetic information</label><br>
+        <input type="radio" id="q3-c" name="q3" value="C"> <label for="q3-c" style="font-size: 30px;">C. To generate
+            energy for the cell</label><br>
+        <input type="radio" id="q3-d" name="q3" value="D"> <label for="q3-d" style="font-size: 30px;">D. To regulate
+            cell growth and division</label>
+    </div>
+
+    <button id="submit-btn">Submit</button>
+
+    <p id="score" style="color: black;"></p>
+
+
+    <script>
+        function function1() {
+            document.getElementById("paragraph").innerHTML = "The outer layer of the kidney is a tough capsule. On the inside the kidney is divided into an outer renal cortex and an inner renal medulla. The hilum extends inside the kidney into a funnel- like space called the renal pelvis. The renal pelvis has projections called calyces (sing: calyx).";
+        }
+        // function function2() {
+        //     document.getElementById('paragraph').innerHTML = 'Renal Cortex '
+        // }
+        const submitBtn = document.getElementById('submit-btn');
+        const scoreElement = document.getElementById('score');
+
+        const correctAnswers = {
+            q1: 'C',
+            q2: 'C',
+            q3: 'C'
+        };
+
+        let score = 0;
+
+        submitBtn.addEventListener('click', () => {
+            score = 0;
+
+            for (const question in correctAnswers) {
+                const radios = document.getElementsByName(question);
+                for (const radio of radios) {
+                    if (radio.checked && radio.value === correctAnswers[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            scoreElement.innerText = `${score}`;
+        });
+
+
+
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDuUcNUMF2ZucDPJSg91TFoZIK-clymQog",
+            authDomain: "backend-e4e43.firebaseapp.com",
+            projectId: "backend-e4e43",
+            storageBucket: "backend-e4e43.appspot.com",
+            messagingSenderId: "899610782759",
+            appId: "1:899610782759:web:cfbae9b5aed035cc727202",
+            measurementId: "G-7TK42W7Z0M"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        import { getDatabase, ref, set, child, update, remove } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+        const db = getDatabase();
+
+
+
+        //
+        var score1 = document.getElementById('score');
+        var insertButton = document.getElementById('submit-btn');
+        // var selectButton = document.getElementById('select');
+        // var updateButton = document.getElementById('update');
+        // var DeleteButton = document.getElementById('delete');
+        function InsertData() {
+            const scoreValue = scoreElement.innerText; // Get the score value from the HTML element
+            set(ref(db, 'TheStudents/' + scoreValue), {
+                score1Data: scoreValue
+            })
+                .then(() => {
+                    alert("Data Successfully added")
+                }).catch((error) => {
+                    alert("Data Unsuccessfully" + error);
+                });
+        }
+        insertButton.addEventListener('click', InsertData);
+
+
+
+    </script>
+</body>
+
+</html>

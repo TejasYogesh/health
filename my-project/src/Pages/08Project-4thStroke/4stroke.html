@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four-Stroke Engine</title>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+    body {
+        font-family: 'Manrope';
+        /* top: 40px; */
+
+        background-color: black;
+        /* padding-top: 80px; */
+    }
+
+    .main {
+        position: relative;
+
+
+    }
+
+    #Movement {
+        position: absolute;
+        top: 380px;
+        left: 128px;
+        transition: transform ease-in-out .7s;
+        /* animation-name: Movement; */
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    /* 
+    @keyframes Movement {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(180deg);
+        }
+    } */
+
+
+
+    #Movement:hover {
+        transform: rotate(180deg);
+    }
+
+    #grey {
+        position: absolute;
+        top: 60px;
+        left: 159px;
+    }
+
+    #fireBurning {
+        position: absolute;
+        top: 40px;
+        z-index:0;
+        left: 168px;
+        height: 10px;
+        width: 150px;
+        animation-duration: 4s;
+        /* animation-name: fireburning; */
+        animation-delay: .2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        transition: all ease-in-out .4s;
+    }
+    .fireBurning2 .fireBurning3 .fireBurning4{
+
+        position: absolute;
+        top: 40px;
+        z-index:0;
+        left: 168px;
+        height: 10px;
+        width: 150px;
+        animation-duration: 4s;
+        /* animation-name: fireburning; */
+        animation-delay: .2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        transition: all ease-in-out .4s;
+
+
+    }
+    @keyframes fireburning {
+        0%{
+            height: 10px;
+        }
+        100%{
+            height: 130px;
+        }
+    }
+    @keyframes fireBurning2 {
+        0%{
+            height: 130px;
+        }
+        100%{
+            height: 10px;
+        }
+    }
+    @keyframes fireBurning3 {
+        from{
+            height:10px
+        }
+        to{
+            height: 130px;
+        }
+    }
+    @keyframes fireBurning4 {
+        from{
+            height:10px;
+        }
+        to{
+            height: 130px;
+        }
+    }
+    
+
+    /* PisionHead Part of the CSS */
+    #PistonHead {
+        position: absolute;
+        top: 65px;
+        left: 155px;
+        z-index: 1;
+        /* transform: ; */
+        transition: all ease-in-out .4s;
+        /* animation-name: pistonHead; */
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .PistonHead1 .PistonHead2 .PistonHead3 {
+        position: absolute;
+        top: 65px;
+        left: 155px;
+        z-index: 1;
+        /* transform: ; */
+        transition: all ease-in-out .4s;
+        /* animation-name: pistonHead; */
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+
+
+
+    }
+
+    /* Piston Animation Part Important: */
+
+    @keyframes pistonHead {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(100px);
+        }
+    }
+
+    @keyframes pistonHead1 {
+        0% {
+            transform: translateY(100px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+
+    @keyframes pistonHead2 {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(100px);
+        }
+    }
+
+
+    @keyframes pistonHead3 {
+        0% {
+            transform: translateY(100px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+
+
+
+
+
+
+    #PistonHead:hover {
+        /* top: 190px; */
+        transform: scale(1.2);
+
+    }
+
+
+
+    #Hands:hover {
+        /* top: 245px; */
+        transform: scale(1.2);
+    }
+
+    #wheelforMovement {
+        position: absolute;
+        top: 390px;
+        left: 190px;
+        transition: all ease-in-out .5s;
+
+    }
+
+    /* 
+    #wheelforMovement:hover {
+        transform: rotate(180deg);
+        transform: scale(1.2);
+    } */
+
+
+    /* Button part CSS */
+    #buttons {
+        margin-top: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        /* padding-top: 20px; */
+    }
+
+    .btn {
+        margin-right: 20px;
+        margin-top: 90px;
+        margin-top: 10px;
+
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 24px;
+        background-color: rgb(14, 70, 253);
+        border: none;
+        color: aliceblue;
+        font-family: 'Manrope';
+        transition: background-color ease-in-out .1s;
+    }
+
+    .btn:hover {
+        background-color: rgb(255, 15, 55);
+    }
+
+    .total {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    #heading {
+        color: rgb(35, 148, 246);
+        font-size: 70px;
+        padding-right: 100px;
+    }
+
+    p {
+        color: white;
+    }
+
+
+    /* Movement Animation part */
+    .Movement1 .Movement2 .Movement3 {
+
+        transition: transform ease-in-out .7s;
+        /* animation-name: Movement1; */
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+
+    }
+
+    @keyframes Movement1 {
+        from {
+            transform: rotate(180deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    @keyframes Movement {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(180deg);
+        }
+    }
+
+    @keyframes Movement2 {
+        from {
+            transform: rotate(360deg);
+        }
+
+        to {
+            transform: rotate(540deg);
+        }
+    }
+
+    @keyframes Movement3 {
+        from {
+            transform: rotate(540deg);
+        }
+
+        to {
+            transform: rotate(720deg);
+        }
+    }
+
+    /* Hands CSS Part: */
+    #Hands {
+        position: absolute;
+        top: 120px;
+        left: 220px;
+        z-index: 0;
+        /* transform: ; */
+        transition: all ease-in-out .8s;
+        /* animation-name: YellowHands; */
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        /* animation-fill-mode: forwards; */
+    }
+
+
+    /* .hands1 { */
+
+
+    /* position: absolute; */
+    /* top: 120px; */
+    /* left: 220px; */
+    /* z-index: -1; */
+    /* transform: ; */
+    /* transition: all ease-in-out .8s; */
+    /* animation-name: YellowHands; */
+    /* animation-duration: 0s; */
+    /* animation-iteration-count: 1; */
+    /* animation-timing-function: ease-in-out; */
+    /* animation-fill-mode: forwards; */
+
+
+    /* } */
+
+
+    @keyframes YellowHands {
+        0% {
+            transform: translateY(120px);
+        }
+
+
+
+        100% {
+            transform: translateY(220px);
+        }
+
+    }
+
+    @keyframes yellowhands1 {
+        0% {
+            top: 220px;
+
+        }
+
+        100% {
+            top: 120px;
+        }
+    }
+
+    @keyframes yellowhands2 {
+        0% {
+            top: 120px;
+        }
+
+        100% {
+            top: 220px;
+        }
+    }
+
+    @keyframes yellowhands3 {
+        0% {
+            top: 220px;
+        }
+
+        100% {
+            top: 120px;
+        }
+    }
+
+    
+    /* #PistonHead{
+        animation-name: pistonHead;
+        animation-duration: 0;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    } */
+</style>
+
+
+<body>
+    <div class="total">
+        <div class="main">
+            <img src="Images/OutView.png" alt="" height="650px">
+            <div class="items">
+                <img src="Images/grey.png" alt="" height="270px" id="grey">
+                <img src="Images/Movement.png" alt="" height="180px" id="Movement"
+                    class="Movement1 Movement2 Movement3 Movement4 mainMovement">
+                <img src="Images/PistonHead.png" alt="" height="120px" id="PistonHead"
+                    class="PistonHead1 PistonHead2 PistonHead3">
+                <img src="Images/fireBurning2.png" alt="" id="fireBurning" class="fireBurning2 fireBurning3 fireBurning4">
+                <img src="Images/Hands2Update.png" alt="" id="Hands" height="270px" class="hands1 hands2 hands3">
+                <img src="Images/wheelforMovement.png" alt="" id="wheelforMovement" height="120px">
+            </div>
+
+            <div id="buttons">
+                <div class="btn" id="btn1">1st Stroke</div>
+                <div class="btn" id="btn2">2nd Stroke</div>
+                <div class="btn" id="btn3">3rd Stroke</div>
+                <div class="btn" id="btn4">4th Stroke</div>
+                <!-- <div class="btn" id="continue">Continue Running</div> -->
+            </div>
+        </div>
+        <div class="working">
+
+            <h1 id="heading">Stroke Process</h1>
+            <p>The engine crankshaft keeps rotating by inertia from the previous power stroke. The intake stroke is
+                always considered the first of the sequence. During the intake stroke, the piston moves down, creating a
+                vacuum above it..</p>
+            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque molestiae officiis!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque molestiae officiis! Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Saepe voluptas quibusdam, laborum architecto, sequi eius -->
+        </div>
+
+
+
+    </div>
+    <script>
+        const firstStroke = document.getElementById('btn1');
+        const secondStroke = document.getElementById('btn2');
+        const thirdStroke = document.getElementById('btn3');
+        const fourthStroke = document.getElementById('btn4');
+        const heading = document.getElementById('heading');
+        const pistonHead = document.getElementById('PistonHead');
+        
+        
+        
+        firstStroke.addEventListener('click', function () {
+            const PistonHead = document.getElementById('PistonHead');
+            const Movement = document.getElementById('Movement');
+            // const Hands = document.getElementById('Hands');
+            const fireBurning = document.getElementById('fireBurning');
+            fireBurning.style.animationName = 'fireburning';
+            // Hands.style.animationDuration = '3s';
+            // PistonHead.style.display = 'none';
+            // Hands.style.animationName = 'YellowHands'
+            // alert("You are Currently in 1st Stroke Engine")
+            Movement.style.animationName = 'Movement';
+            PistonHead.style.animationName = 'pistonHead';
+            PistonHead.style.animationDuration = '3s';
+            PistonHead.style.animationIterationCount = '1';
+            PistonHead.style.animationTimingFunction = 'linear';
+            console.log("hello")
+            heading.innerHTML = "1st Stroke- Running";
+            const paragraphChange = document.getElementsByTagName('p')[0].innerHTML = "Intake: During the intake stroke, the piston descends, creating a partial vacuum. An ignitable mixture of gasoline vapor and air is drawn into the cylinder through the open inlet valve"
+        
+        });
+        firstStroke.addEventListener('click', function () {
+            const Hands = document.getElementById('Hands');
+            Hands.style.animationName = 'YellowHands'
+            console.log(Hands.style.animationName);
+            console.log('Helsdffo')
+        })
+        secondStroke.addEventListener('click', function () {
+            const fireBurning2 = document.querySelector('.fireBurning2');
+            console.log(fireBurning.style.animationName)
+            fireBurning2.style.animationName = 'fireburning2';
+            // console.log(fireBurning)
+            const Movement1 = document.querySelector('.Movement1');
+            const yellowHands1 = document.querySelector('.hands1')
+            yellowHands1.style.animationName = 'yellowhands1'
+            const pistonHead1 = document.querySelector('.PistonHead1');
+            pistonHead1.style.animationName = 'pistonHead1'
+            Movement1.style.animationName = 'Movement1';
+            // console.log('Hello')
+            heading.innerHTML = "2nd Stroke-Running";
+            const paragraphChange = document.getElementsByTagName('p')[0].innerHTML = 'Compression: Once the intake process is complete, the compression stroke begins. The piston ascends, compressing the fuel-air mixture within the cylinder. Both valves remain closed during this phase'
+        });
+        thirdStroke.addEventListener('click', function () {
+            const fireBurning = document.querySelector('.fireBurning3');
+            fireBurning.style.animationName = 'fireburning3';
+            const pistonHead2 = document.querySelector('.PistonHead2');
+            pistonHead2.style.animationName = 'pistonHead2';
+            const Movement2 = document.querySelector('.Movement2');
+            Movement2.style.animationName = 'Movement2';
+        
+            console.log('3rd Stroke');
+            heading.innerHTML = "3rd Stroke-Running";
+            const paragraphChange = document.getElementsByTagName('p')[0].innerHTML = 'The real power generation occurs during the ignition process. An electric spark ignites the compressed mixture, resulting in an explosive force that pushes the piston downward '
+        
+        });
+        fourthStroke.addEventListener('click', function () {
+            const fireBurning = document.querySelector('.fireBurning4');
+            fireBurning.style.animationName = 'fireburning4';
+            const pistonHead3 = document.querySelector('.PistonHead3');
+            pistonHead3.style.animationName = 'pistonHead3';
+            console.log('hello')
+        
+            const Movement3 = document.querySelector('.Movement3');
+            Movement3.style.animationName = 'Movement3';
+        
+            heading.innerHTML = "4th Stroke-Running";
+            const paragraphChange = document.getElementsByTagName('p')[0].innerHTML = 'Exhaust: After ignition, the piston moves upward again, expelling the burned gases from the combustion chamber through the open exhaust valve 2.'
+        
+        });
+        // const continueReading = document.getElementById('continue');
+        // continueReading.addEventListener('click', function () {
+        //     window.location.href = "https://www.youtube.com/watch?v=5QZyQh9QZqM";
+        
+        
+        // })</script>
+
+
+</body>
+
+</html>

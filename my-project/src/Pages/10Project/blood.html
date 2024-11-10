@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+        body {
+            /* background-color: black; */
+            font-family: "Manrope", sans-serif;
+        }
+
+        .vesselred1 {
+            opacity: 0;
+            animation-name: wipe-in-right;
+            animation: 2.5s cubic-bezier(.25, 1, .30, 1) both;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+        }
+
+        .vesselred2 {
+            animation-name: wipe-in-right;
+            animation: 2.5s cubic-bezier(.25, 1, .30, 1) both;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+
+        }
+
+        @keyframes wipe-in-right {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        h1 {
+            font-family: "Manrope", sans-serif;
+            /* font-optical-sizing: auto; */
+            color: white;
+            font-size: 40px;
+            font-weight: 1000;
+            /* padding-top:10px ; */
+            margin-bottom: 100px;
+            /* text-align: center; */
+            /*  */
+            /* font-style: normal; */
+        }
+
+        /* p{
+            color: white;
+        } */
+        .bloodvessel1 {
+            position: relative;
+        }
+
+        .yellow {
+            position: relative;
+        }
+
+        #yellowvessel1 {
+            position: absolute;
+            top: 68px;
+            animation: 5s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
+
+        }
+
+        .anotheryellow {
+            position: relative;
+        }
+
+        #vesselyellow2 {
+            position: absolute;
+            /* bottom: 10px; */
+            /* top: 100px; */
+            bottom: -20px;
+            animation: 3.5s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
+        }
+
+        .rbccell {
+            animation-timing-function: ease-in-out;
+        }
+
+        #rbcs {
+            /* position: absolute; */
+            /* animation-name: rbcmovement; */
+            animation-iteration-count: 1;
+            animation-delay: 0s;
+            animation-duration: 4s;
+            /* animation-timing-function: cubic-bezier(0, 0, 0.58, 1); */
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-direction: normal;
+
+            /* animation-direction: alternate; */
+        }
+
+        @keyframes rbcmovement {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+
+            10% {
+                transform: translateX(100px) translateY(-30px);
+            }
+
+            20% {
+                transform: translateX(200px) translateY(-50px);
+            }
+
+            30% {
+                transform: translateX(300px) translateY(-60px);
+            }
+
+            40% {
+                transform: translateX(400px) translateY(-50px);
+            }
+
+            50% {
+                transform: translateX(500px) translateY(-30px);
+            }
+
+            60% {
+                transform: translateX(600px) translateY(10px);
+            }
+
+            70% {
+                transform: translateX(700px) translateY(30px);
+            }
+
+            80% {
+                transform: translateX(800px) translateY(40px);
+            }
+
+            90% {
+                transform: translateX(900px) translateY(50px);
+            }
+
+            100% {
+                transform: translateX(1000px) translateY(40px);
+            }
+        }
+
+        .title {
+            background-color: rgb(236, 27, 62);
+            border-radius: 10px;
+            padding-left: 20px;
+            /* position: static; */
+            margin-top: -5px;
+            /* margin-top: 100px; */
+            /* padding: 1px; */
+            /* padding: 2px 2px; */
+
+        }
+
+        .h2class {
+            color: rgb(236, 27, 62);
+        }
+
+        button {
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: red;
+            color: white;
+            font-family: 'Manrope';
+            font-size: 20px;
+            font-weight: 500;
+
+        }
+
+        .questionincode label {
+            font-size: 4.5rem;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bloodvessel">
+        <div class="title">
+
+            <h1>Leukemia - Blood Cancer</h1>
+        </div>
+        <!-- <p>This is a blood Cancer</p> -->
+        <div class="container">
+            <img src="Images/vesselred1.png" alt="" width="100%" id="vesselred1" class="vesselred1">
+        </div>
+        <div class="anotheryellow">
+            <img src="Images/vesselyellow2.png" alt="" width="100%" id="vesselyellow2">
+        </div>
+        <div class="yellow">
+            <img src="Images/vesselyellow1.png" alt="" width="100%" id="yellowvessel1">
+        </div>
+
+        <div class="rbc">
+            <img src="Images/rbc1.png" alt="" id="rbcs" class="rbccell">
+        </div>
+
+        <!-- WIP -->
+        <!-- <div class="vill">
+            <img src="Images/Villi.png" alt="" width="100%" id="vills">
+        </div> -->
+        <div class="container">
+            <img src="Images/vesselred1.png" alt="" width="100%" id="vesselred1" class="vesselred2">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="buttonsofblood">
+
+        <button id="buttonsblood">Blood Vessels</button>
+        <button id="btnofcell">Cell Movement</button>
+        <button id="btn">Blood Flow</button>
+        <button id="btnofcause">What Causes Atherosclerosis</button>
+        <button id="btnofcause">Dark Mode / Light Mode</button>
+    </div>
+
+    <h2 class="h2class">
+        Leukaemia is a type of blood cancer that affects blood cells in your bone marrow – usually white blood cells.
+
+        Your bone marrow is a spongy tissue found inside some of your bones, and it’s where the body makes blood cells.
+        In leukaemia, blood cells are not produced the way they should be and you may have too many, too few, or blood
+        cells that don't work properly.
+
+    </h2>
+
+
+
+
+
+
+
+
+    <h1 style="padding: 10px; color: black; font-size: 70px;">Questions - Based on Cell</h1>
+
+    <div class="questionsincode" style="color: black;">
+        <h2 style="font-size: 40px;">What is the primary function of the mitochondria in a cell</h2>
+        <input type="radio" id="q1-a" name="q1" value="A"> <label for="q1-a" style="font-size: 30px;">A. To synthesize
+            proteins</label><br>
+        <input type="radio" id="q1-b" name="q1" value="B"> <label for="q1-b" style="font-size: 30px;">B. To store
+            genetic information</label><br>
+        <input type="radio" id="q1-c" name="q1" value="C"> <label for="q1-c" style="font-size: 30px;">C. To generate
+            energy for the cell</label><br>
+        <input type="radio" id="q1-d" name="q1" value="D"> <label for="q1-d" style="font-size: 30px;">D. To regulate
+            cell growth and division</label>
+    </div>
+
+    <div class="questionsincode" style="color: black;">
+        <h2 style="font-size: 40px;">What is the primary function of the mitochondria in a cell</h2>
+        <input type="radio" id="q2-a" name="q2" value="A"> <label for="q2-a" style="font-size: 30px;">A. To synthesize
+            proteins</label><br>
+        <input type="radio" id="q2-b" name="q2" value="B"> <label for="q2-b" style="font-size: 30px;">B. To store
+            genetic information</label><br>
+        <input type="radio" id="q2-c" name="q2" value="C"> <label for="q2-c" style="font-size: 30px;">C. To generate
+            energy for the cell</label><br>
+        <input type="radio" id="q2-d" name="q2" value="D"> <label for="q2-d" style="font-size: 30px;">D. To regulate
+            cell growth and division</label>
+    </div>
+
+    <div class="questionsincode" style="color: black;">
+        <h2 style="font-size: 40px;">What is the primary function of the mitochondria in a cell</h2>
+        <input type="radio" id="q3-a" name="q3" value="A"> <label for="q3-a" style="font-size: 30px;">A. To synthesize
+            proteins</label><br>
+        <input type="radio" id="q3-b" name="q3" value="B"> <label for="q3-b" style="font-size: 30px;">B. To store
+            genetic information</label><br>
+        <input type="radio" id="q3-c" name="q3" value="C"> <label for="q3-c" style="font-size: 30px;">C. To generate
+            energy for the cell</label><br>
+        <input type="radio" id="q3-d" name="q3" value="D"> <label for="q3-d" style="font-size: 30px;">D. To regulate
+            cell growth and division</label>
+    </div>
+
+    <button id="submit-btn">Submit</button>
+
+    <p id="score" style="color: white;"></p>
+
+    <script>
+        const submitBtn = document.getElementById('submit-btn');
+        const scoreElement = document.getElementById('score');
+
+        const correctAnswers = {
+            q1: 'C',
+            q2: 'C',
+            q3: 'C'
+        };
+
+        let score = 0;
+
+        submitBtn.addEventListener('click', () => {
+            score = 0;
+
+            for (const question in correctAnswers) {
+                const radios = document.getElementsByName(question);
+                for (const radio of radios) {
+                    if (radio.checked && radio.value === correctAnswers[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            scoreElement.innerText = `Your score is: ${score} out of ${Object.keys(correctAnswers).length}`;
+        });
+    </script>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
